@@ -1,45 +1,38 @@
 #include<iostream>
-
 using namespace std;
-
-class Node
-{
-public:
-	int data;
-	Node* next;
-};
-
-void printList(Node* head1)
-{
-	while (head1 != NULL) {
-		cout << head1->data << " ";
-		head1 = head1->next;
-	}
-}
+const int  rows = 2;
+const int  cols = 3;
 
 int main()
 {
-	Node* head = NULL;
-	Node* first = NULL;
-	Node* second = NULL;
-	Node* third = NULL;
-
-	head = new Node();
-	first = new Node();
-	second = new Node();
-	third = new Node();
-
-	head->data = 50;
-	head->next = first;
-	first->data = 40;
-	first->next = second;
-	second->data = 60;
-	second->next = NULL;
-	third->data =  70;
-	third->next	=nullptr;;
-
-	printList(head);
-
-
+	int arr[2][3], arr2[2][3], res[2][3];
+	cout << "Enter the elements1 " << endl;
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			cin >> arr[i][j];
+		cout << "\n";
+	}
+	cout << "Enter the elements2 " << endl;
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			cin >> arr2[i][j] ;
+		cout << "\n";
+	}
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 3; j++)
+			 res[i][j] = arr[i][j] + arr2[i][j];
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			cout << res[i][j] << " ";
+		}
+		cout << endl;
+	}
 	return 0;
 }
+
+
